@@ -1,24 +1,32 @@
-import React, {useState,useEffect} from 'react';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import { Provider } from "react-redux";
+import "./App.css";
 
-import {priceApiGetterStandard} from './fakeApi/fakeApiGetter'
+import { store } from "./store";
+import { priceApiGetterStandard } from "./fakeApi/fakeApiGetter";
 
-import ChartContainer from './ChartContainer'
-import TimePeriodsComponent from './TimePeriodsComponent'
+import ChartContainer from "./ChartContainer";
+import TimePeriodsComponent from "./TimePeriodsComponent";
+import DropDownMenu from "./DropDownMenu";
 
 function App() {
-  const [timePeriod, setTimePeriod] = useState('week');
-  const [bondData, setBondData] = useState([])
-  useEffect(()=>{
-    priceApiGetterStandard(timePeriod).then(res=>{
-      setBondData(res)
-    }).catch(e=>console.error(e))
-  },[timePeriod])
+  const [timePeriod, setTimePeriod] = useState("week");
+  const [bondData, setBondData] = useState([]);
+  useEffect(() => {
+    priceApiGetterStandard(timePeriod)
+      .then(res => {
+        setBondData(res);
+      })
+      .catch(e => console.error(e));
+  }, [timePeriod]);
 
   return (
     <div className="App">
-      <TimePeriodsComponent timePeriodHandler={setTimePeriod}  activePeriod={timePeriod}/>
-      <ChartContainer data={bondData} />
+      <Provider store={store}>
+        <TimePeriodsComponent />
+        <ChartContainer />
+        <DropDownMenu />
+      </Provider>
     </div>
   );
 }

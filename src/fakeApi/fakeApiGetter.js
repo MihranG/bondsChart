@@ -43,9 +43,7 @@ export const priceApiGetterStandard = (period, bond)=>{
     //     }
     // })
 
-    return Promise.resolve(data)
+    return new Promise((resolve)=>{
+        setTimeout(()=>resolve(data), 500)
+    })
 }
-
-
-
-export const api1 = ()=>Promise.resolve('fake')
