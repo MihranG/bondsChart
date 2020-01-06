@@ -1,0 +1,17 @@
+.periods-button{
+    border-radius: 2px;
+    background-color: none;
+    border: 1px solid gray;
+    margin: 0 5px;
+    outline: none;
+}
+.periods-button:active{
+    outline: none;
+}
+
+.active{
+    background-color: lightskyblue;
+}
+.buttons-wrapper{
+    margin: 10px 0;
+}
