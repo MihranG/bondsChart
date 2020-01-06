@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./ChartContainer.css";
 import {
   LineChart,
@@ -11,7 +11,6 @@ import {
 import { connect } from "react-redux";
 
 import { fetchData } from "./thunks";
-import { render } from "react-dom";
 
 export class ChartContainerDisconnected extends React.Component {
   componentDidMount() {
