@@ -1,16 +1,13 @@
 import React from "react";
-import { render, cleanup } from "@testing-library/react";
+import {shallow} from 'enzyme';
 import App from "./App";
 
-afterEach(cleanup);
-
 describe("App component", () => {
-  let component;
+  let wrapper;
   beforeAll(() => {
-    component = render(<App />);
+    wrapper = shallow(<App />) 
   });
-  it("should match snapshot", () => {
-    let tree = component.toJson();
-    expect(tree).toMatchSnapshot();
+  it("should match  snapshot", () => {
+    expect(wrapper).toMatchSnapshot()
   });
 });
