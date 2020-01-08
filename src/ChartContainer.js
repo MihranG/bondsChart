@@ -22,11 +22,12 @@ export class ChartContainerDisconnected extends React.Component {
 
   render() {
     const { data, isLoading, activeViewMode } = this.props;
-
     return (
       <div className="chart-wrapper">
         {isLoading ? (
-          <p>Loading...</p>
+          <p id="loading_text" test-id="loading">
+            Loading...
+          </p>
         ) : (
           <LineChart
             width={400}
