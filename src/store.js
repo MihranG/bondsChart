@@ -53,13 +53,16 @@ export const store = configureStore({
 });
 
 export const {
-  actions: { setLoading, setActiveTimePeriod }
+  actions: { setLoading, setActiveTimePeriod },
+  reducer: timePeriodReducer
 } = timePeriodSlice;
 
 export const {
-  actions: { setData, clearData }
+  actions: { setData, clearData },
+  reducer: bondsDataReducer
 } = bondsDataSlice;
 
 export const {
-  actions: { setActiveMode }
+  actions: { setActiveMode },
+  reducer: viewModeReducer
 } = viewModeSlice;

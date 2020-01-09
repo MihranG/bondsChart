@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Redux store should have appropriate setData & clearData actions 1`] = `
+Object {
+  "payload": Array [
+    Object {
+      "name": "testName2",
+      "price": 111,
+      "spread": 222,
+      "yield": 333,
+    },
+    Object {
+      "name": "testName2",
+      "price": 111,
+      "spread": 222,
+      "yield": 333,
+    },
+  ],
+  "type": "bondsData/setData",
+}
+`;
